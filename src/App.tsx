@@ -1,4 +1,3 @@
-import { listenerCount } from "process";
 import { useState } from "react";
 import * as Componentes from "./App.styles";
 import { Item } from "./types/Item";

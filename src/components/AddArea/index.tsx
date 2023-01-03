@@ -10,21 +10,21 @@ export const AddArea = ({ onEnter }: Props) => {
   const [inputText, setInputText] = useState("");
 
   const handleKeyUp = (e: KeyboardEvent) => {
-    if(e.code === "Enter" && inputText!= "" || e.code === "NumpadEnter" && inputText!= ""){
+    if((e.code === "Enter" && inputText !== "") || (e.code === "NumpadEnter" && inputText!== "")){
       onEnter(inputText);
       setInputText("");
     }
   }
 
   const clickOnPlusButton = (inputText: string) => {
-    if(inputText!= ""){
+    if(inputText !== ""){
       onEnter(inputText);
       setInputText("");
     }
   }
   return (
     <C.Container>
-      <div className="image"><AddIcon style={{cursor:"pointer"}} onClick={() => clickOnPlusButton(inputText)}></AddIcon></div>
+      <AddIcon className="image" style={{cursor:"pointer", color:"green"}} onClick={() => clickOnPlusButton(inputText)}></AddIcon>
       <input 
         type="text"
         placeholder="Adicione uma nova tarefa"
